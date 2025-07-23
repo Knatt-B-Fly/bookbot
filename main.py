@@ -1,3 +1,7 @@
+import sys
+from stats import get_num_words
+
+
 def main():
     # Here you decide which file to read from a specified path
     book_path = "./workspace/github.com/bootdotdev/curriculum/bookbot/books/frankenstein.txt"
@@ -12,10 +16,7 @@ def get_book_text(filepath):
             book_contents = f.read()
             return book_contents
 
-def get_num_words(text):
-    words = text.split()
-    return len(words)
-     
+
 
 
 main()  
