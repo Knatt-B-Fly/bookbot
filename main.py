@@ -1,3 +1,10 @@
+def main():
+    # Here you decide which file to read from a specified path
+    book_path = "./workspace/github.com/bootdotdev/curriculum/bookbot/books/frankenstein.txt"
+    text = get_book_text(book_path)
+    num_words = get_num_words(text)
+    print(f"{num_words} words found in the document")
+
 
 def get_book_text(filepath):
     # opens file specified at end of relative path
@@ -5,11 +12,12 @@ def get_book_text(filepath):
             book_contents = f.read()
             return book_contents
 
-def main():
-    # Here you decide which file to read from a specified path
-    book_path = "./workspace/github.com/bootdotdev/curriculum/bookbot/books/frankenstein.txt"
-    text = get_book_text(book_path)
-    print(text)
+def get_num_words(text):
+    words = text.split()
+    return len(words)
+     
+
+
 main()  
 
 
