@@ -4,7 +4,11 @@ from stats import get_num_words, get_num_characters, chars_dict_to_sorted_list
 
 def main():
     # Here you decide which file to read from a specified path
-    book_path = "./workspace/github.com/bootdotdev/curriculum/bookbot/books/frankenstein.txt"
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    book_path = sys.argv[1]
+    
     text = get_book_text(book_path)
     num_words = get_num_words(text)
     chars_dict = get_num_characters(text)
